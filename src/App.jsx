@@ -52,22 +52,26 @@ export default function App() {
     <div className="min-h-screen bg-[#0a0a0b]">
       <Header />
       <main className="mx-auto max-w-[1600px] px-4 py-6 sm:px-6 lg:py-8">
-        <div className="grid gap-6 lg:grid-cols-[minmax(320px,380px)_1fr] lg:items-stretch">
-          <section className="flex min-h-[560px] flex-col rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 lg:min-h-[600px]">
+        <div className="grid gap-6 lg:grid-cols-[minmax(320px,380px)_1fr] lg:items-start">
+          <section className="flex h-[600px] max-h-[600px] flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 lg:sticky lg:top-6">
             <h2 className="mb-4 shrink-0 text-xs font-semibold uppercase tracking-widest text-zinc-500">
               Idea Input
             </h2>
-            <InputForm
-              values={form}
-              onChange={setForm}
-              loading={loading}
-              onAnalyze={handleAnalyze}
-              onSample={fillSample}
-            />
+            <div className="min-h-0 flex-1 overflow-y-auto pr-1">
+              <InputForm
+                values={form}
+                onChange={setForm}
+                loading={loading}
+                onAnalyze={handleAnalyze}
+                onSample={fillSample}
+              />
+            </div>
           </section>
 
-          <section className="flex min-h-[560px] flex-col rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 lg:min-h-[600px]">
-            <ResultsDashboard report={report} />
+          <section className="flex h-[600px] max-h-[600px] flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5">
+            <div className="min-h-0 flex-1 overflow-y-auto pr-1">
+              <ResultsDashboard report={report} />
+            </div>
           </section>
         </div>
       </main>

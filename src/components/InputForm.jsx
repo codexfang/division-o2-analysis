@@ -7,17 +7,18 @@ export default function InputForm({ values, onChange, onAnalyze, onSample, loadi
   const set = (field) => (e) => onChange({ ...values, [field]: e.target.value })
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col">
-      <div className="flex min-h-0 flex-1 flex-col space-y-4">
-        <div className="flex min-h-0 flex-1 flex-col">
-          <label className="mb-1.5 block shrink-0 text-xs font-medium text-zinc-400">
+    <div className="flex flex-col">
+      <div className="space-y-4">
+        <div>
+          <label className="mb-1.5 block text-xs font-medium text-zinc-400">
             Startup idea
           </label>
           <textarea
+            rows={5}
             value={values.idea}
             onChange={set('idea')}
             placeholder="Describe the problem, solution, and wedge..."
-            className={`${inputClass} min-h-[120px] flex-1 resize-none`}
+            className={`${inputClass} min-h-[120px] resize-y`}
           />
         </div>
         <div>
@@ -56,7 +57,7 @@ export default function InputForm({ values, onChange, onAnalyze, onSample, loadi
           />
         </div>
       </div>
-      <div className="mt-6 flex shrink-0 flex-col gap-2">
+      <div className="mt-6 flex flex-col gap-2">
         <button
           type="button"
           onClick={onAnalyze}

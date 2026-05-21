@@ -5,7 +5,7 @@ import { downloadReportPdf } from '../utils/exportReport.js'
 
 function EmptyState() {
   return (
-    <div className="flex min-h-0 flex-1 flex-col items-center justify-center rounded-xl border border-dashed border-zinc-800 bg-zinc-900/30 px-8 py-12 text-center">
+    <div className="flex min-h-[520px] flex-col items-center justify-center rounded-xl border border-dashed border-zinc-800 bg-zinc-900/30 px-8 text-center">
       <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-zinc-800/80 text-2xl text-zinc-500">
         ◈
       </div>
@@ -19,16 +19,10 @@ function EmptyState() {
 }
 
 export default function ResultsDashboard({ report }) {
-  if (!report) {
-    return (
-      <div className="flex min-h-0 flex-1 flex-col">
-        <EmptyState />
-      </div>
-    )
-  }
+  if (!report) return <EmptyState />
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 pb-2">
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-zinc-800 pb-4">
         <div>
           <h2 className="text-lg font-semibold text-zinc-100">Intelligence Report</h2>
