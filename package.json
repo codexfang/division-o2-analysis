@@ -3,14 +3,14 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://seraphicflare.github.io/division-o2-analysis/",
+  "homepage": "https://codexfang.github.io/division-o2-analysis/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -r https://github.com/seraphicflare/division-o2-analysis.git"
+    "deploy": "gh-pages -d dist -r https://github.com/codexfang/division-o2-analysis.git"
   },
   "dependencies": {
     "gh-pages": "^6.3.0",

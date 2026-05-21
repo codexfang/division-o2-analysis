@@ -30,7 +30,7 @@ export default function ResultsDashboard({ report, compact = false }) {
           <div>
             <h2 className="text-lg font-semibold text-zinc-100">Intelligence Report</h2>
             <p className="text-xs text-zinc-500">
-              {new Date(report.analyzedAt).toLocaleString()} · Offline mock engine
+              {new Date(report.analyzedAt).toLocaleString()}
             </p>
           </div>
         )}

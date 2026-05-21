@@ -54,7 +54,7 @@ cd /Users/seraphicflare/Projects/division-o2-analysis
 git add .
 git commit -m "Initial commit: Division O2 Analysis MVP"
 git branch -M main
-git remote add origin https://github.com/seraphicflare/division-o2-analysis.git
+git remote add origin https://github.com/codexfang/division-o2-analysis.git
 git push -u origin main
 ```
 
@@ -64,13 +64,13 @@ git push -u origin main
 npm run deploy
 ```
 
-The deploy script uses `-r https://github.com/seraphicflare/division-o2-analysis.git` so you do not need `origin` configured for `gh-pages` alone—but the repo must exist on GitHub and you must be authenticated (`gh auth login` or SSH/HTTPS credentials).
+The deploy script uses `-r https://github.com/codexfang/division-o2-analysis.git` so you do not need `origin` configured for `gh-pages` alone—but the repo must exist on GitHub and you must be authenticated (`gh auth login` or SSH/HTTPS credentials).
 
 4. In the repo **Settings → Pages**, set source to branch **`gh-pages`**, folder **`/ (root)`**.
 
-5. Live site: **https://seraphicflare.github.io/division-o2-analysis/**
+5. Live site: **https://codexfang.github.io/division-o2-analysis/**
 
-If your GitHub username is not `seraphicflare`, change the URL in `package.json` (`deploy` script) and in `git remote add origin` above.
+If the repo is under a different GitHub user or org, update the URL in `package.json` (`homepage` and `deploy` script) and in `git remote`.
 
 ### SPA / routing
 

@@ -10,15 +10,10 @@ export default function Header() {
             <h1 className="text-base font-semibold tracking-tight text-zinc-50">
               Division O2 Analysis
             </h1>
-            <p className="text-xs text-zinc-500">Startup intelligence · Mock validation engine</p>
+            <p className="text-xs text-zinc-500">Startup intelligence</p>
           </div>
         </div>
-        <div className="hidden items-center gap-2 sm:flex">
-          <span className="rounded-full bg-emerald-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-400 ring-1 ring-emerald-500/20">
-            Offline
-          </span>
-          <span className="text-xs text-zinc-600">YC-style idea screening</span>
-        </div>
+        <span className="hidden text-xs text-zinc-600 sm:inline">YC-style idea screening</span>
       </div>
     </header>
   )

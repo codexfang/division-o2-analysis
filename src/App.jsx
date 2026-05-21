@@ -1,9 +1,8 @@
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import Header from './components/Header.jsx'
 import InputForm from './components/InputForm.jsx'
 import ResultsDashboard from './components/ResultsDashboard.jsx'
 import { analyzeMarket } from './mock/marketAnalyzer.js'
-import { SAMPLE_IDEAS } from '../data/sampleIdeas.js'
 
 const EMPTY_FORM = {
   idea: '',
@@ -26,19 +25,6 @@ export default function App() {
   const [loadingA, setLoadingA] = useState(false)
   const [loadingB, setLoadingB] = useState(false)
   const [compareMode, setCompareMode] = useState(false)
-  const [sampleIndex, setSampleIndex] = useState(0)
-  const [sampleIndexB, setSampleIndexB] = useState(1)
-
-  const fillSample = useCallback((setter, indexRef, setIndex) => {
-    const sample = SAMPLE_IDEAS[indexRef % SAMPLE_IDEAS.length]
-    setIndex((i) => i + 1)
-    setter({
-      idea: sample.idea,
-      industry: sample.industry,
-      targetAudience: sample.targetAudience,
-      competitors: sample.competitors,
-    })
-  }, [])
 
   const handleAnalyze = async (form, setReport, setLoading) => {
     if (!form.idea?.trim()) return
@@ -71,7 +57,6 @@ export default function App() {
               compareMode={compareMode}
               onCompareModeChange={setCompareMode}
               onAnalyze={() => handleAnalyze(formA, setReportA, setLoadingA)}
-              onSample={() => fillSample(setFormA, sampleIndex, setSampleIndex)}
             />
           </section>
 
@@ -88,7 +73,6 @@ export default function App() {
                 onCompareModeChange={setCompareMode}
                 slotLabel="Comparison slot"
                 onAnalyze={() => handleAnalyze(formB, setReportB, setLoadingB)}
-                onSample={() => fillSample(setFormB, sampleIndexB, setSampleIndexB)}
               />
             </section>
           )}
