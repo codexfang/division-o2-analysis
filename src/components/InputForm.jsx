@@ -7,6 +7,7 @@ export default function InputForm({
   values,
   onChange,
   onAnalyze,
+  onSample,
   loading,
   compareMode,
   onCompareModeChange,
@@ -78,6 +79,13 @@ export default function InputForm({
           className="rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-500 disabled:cursor-not-allowed disabled:opacity-40"
         >
           {loading ? 'Analyzing…' : 'Analyze Idea'}
+        </button>
+        <button
+          type="button"
+          onClick={onSample}
+          className="rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-2.5 text-sm font-medium text-zinc-300 transition hover:border-zinc-600 hover:bg-zinc-800"
+        >
+          Try Sample Idea
         </button>
       </div>
       {!slotLabel && (
