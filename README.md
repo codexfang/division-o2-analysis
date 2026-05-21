@@ -8,7 +8,6 @@
 - **Mock market analyzer** — keyword and rule-based scoring in `src/mock/marketAnalyzer.js`
 - **Results dashboard** — expandable metric cards with color-coded risk tones
 - **Sample ideas** — AI dating, crypto analytics, food delivery, SaaS productivity
-- **Compare mode** — side-by-side analysis of two ideas
 - **Export PDF** — client-side report download via `jspdf`
 - **GitHub Pages ready** — `npm run build` + `gh-pages` deployment
 

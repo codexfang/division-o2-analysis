@@ -11,34 +11,25 @@ function EmptyState() {
       </div>
       <h3 className="text-lg font-semibold text-zinc-200">Awaiting analysis</h3>
       <p className="mt-2 max-w-sm text-sm text-zinc-500">
-        Enter a startup idea and run Division O2 mock intelligence to generate viability,
-        saturation, and competitive insights.
+        Enter a startup idea and run Division O2 analysis to generate viability, saturation,
+        and competitive insights.
       </p>
     </div>
   )
 }
 
-export default function ResultsDashboard({ report, compact = false }) {
+export default function ResultsDashboard({ report }) {
   if (!report) return <EmptyState />
 
   return (
-    <div className={`flex flex-col ${compact ? 'gap-3' : 'gap-4'}`}>
-      <div
-        className={`flex flex-wrap items-center justify-between gap-3 ${compact ? 'mb-1' : 'border-b border-zinc-800 pb-4'}`}
-      >
-        {!compact && (
-          <div>
-            <h2 className="text-lg font-semibold text-zinc-100">Intelligence Report</h2>
-            <p className="text-xs text-zinc-500">
-              {new Date(report.analyzedAt).toLocaleString()}
-            </p>
-          </div>
-        )}
-        {compact && (
+    <div className="flex flex-col gap-4">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-zinc-800 pb-4">
+        <div>
+          <h2 className="text-lg font-semibold text-zinc-100">Intelligence Report</h2>
           <p className="text-xs text-zinc-500">
             {new Date(report.analyzedAt).toLocaleString()}
           </p>
-        )}
+        </div>
         <button
           type="button"
           onClick={() => downloadReportPdf(report)}
@@ -50,7 +41,7 @@ export default function ResultsDashboard({ report, compact = false }) {
 
       <RecommendationCard recommendation={report.recommendation} />
 
-      <div className={`grid gap-3 ${compact ? 'grid-cols-1' : 'md:grid-cols-2'}`}>
+      <div className="grid gap-3 md:grid-cols-2">
         <MetricCard {...report.viability} />
         <MetricCard {...report.marketSaturation} />
         <MetricCard {...report.competition} />

@@ -3,25 +3,11 @@ import { INDUSTRY_OPTIONS } from '../../data/sampleIdeas.js'
 const inputClass =
   'w-full rounded-lg border border-zinc-800 bg-zinc-950/80 px-3 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-600 outline-none transition focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/30'
 
-export default function InputForm({
-  values,
-  onChange,
-  onAnalyze,
-  onSample,
-  loading,
-  compareMode,
-  onCompareModeChange,
-  slotLabel,
-}) {
+export default function InputForm({ values, onChange, onAnalyze, onSample, loading }) {
   const set = (field) => (e) => onChange({ ...values, [field]: e.target.value })
 
   return (
     <div className="flex h-full flex-col">
-      {slotLabel && (
-        <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-emerald-500/80">
-          {slotLabel}
-        </p>
-      )}
       <div className="space-y-4">
         <div>
           <label className="mb-1.5 block text-xs font-medium text-zinc-400">
@@ -88,17 +74,6 @@ export default function InputForm({
           Try Sample Idea
         </button>
       </div>
-      {!slotLabel && (
-        <label className="mt-6 flex cursor-pointer items-center gap-2 text-sm text-zinc-400">
-          <input
-            type="checkbox"
-            checked={compareMode}
-            onChange={(e) => onCompareModeChange(e.target.checked)}
-            className="rounded border-zinc-600 bg-zinc-900 text-emerald-600 focus:ring-emerald-500/40"
-          />
-          Compare two ideas side-by-side
-        </label>
-      )}
     </div>
   )
 }
