@@ -9,14 +9,12 @@
 - **Results dashboard** — expandable metric cards with color-coded risk tones
 - **Sample ideas** — AI dating, crypto analytics, food delivery, SaaS productivity
 - **Export PDF** — client-side report download via `jspdf`
-- **GitHub Pages ready** — `npm run build` + `gh-pages` deployment
 
 ## Tech stack
 
 - React 19 + Vite 8
 - Tailwind CSS 4
 - jsPDF (PDF export)
-- gh-pages (static deploy)
 
 ### SPA / routing
 
