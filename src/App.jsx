@@ -52,9 +52,9 @@ export default function App() {
     <div className="min-h-screen bg-[#0a0a0b]">
       <Header />
       <main className="mx-auto max-w-[1600px] px-4 py-6 sm:px-6 lg:py-8">
-        <div className="grid gap-6 lg:grid-cols-[minmax(320px,380px)_1fr]">
-          <section className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 lg:sticky lg:top-6 lg:self-start">
-            <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-zinc-500">
+        <div className="grid gap-6 lg:grid-cols-[minmax(320px,380px)_1fr] lg:items-stretch">
+          <section className="flex min-h-[560px] flex-col rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 lg:min-h-[600px]">
+            <h2 className="mb-4 shrink-0 text-xs font-semibold uppercase tracking-widest text-zinc-500">
               Idea Input
             </h2>
             <InputForm
@@ -66,7 +66,7 @@ export default function App() {
             />
           </section>
 
-          <section className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 lg:min-h-[600px]">
+          <section className="flex min-h-[560px] flex-col rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 lg:min-h-[600px]">
             <ResultsDashboard report={report} />
           </section>
         </div>

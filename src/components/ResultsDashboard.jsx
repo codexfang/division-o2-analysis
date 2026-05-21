@@ -5,7 +5,7 @@ import { downloadReportPdf } from '../utils/exportReport.js'
 
 function EmptyState() {
   return (
-    <div className="flex h-full min-h-[420px] flex-col items-center justify-center rounded-xl border border-dashed border-zinc-800 bg-zinc-900/30 px-8 text-center">
+    <div className="flex min-h-0 flex-1 flex-col items-center justify-center rounded-xl border border-dashed border-zinc-800 bg-zinc-900/30 px-8 py-12 text-center">
       <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-zinc-800/80 text-2xl text-zinc-500">
         ◈
       </div>
@@ -19,7 +19,13 @@ function EmptyState() {
 }
 
 export default function ResultsDashboard({ report }) {
-  if (!report) return <EmptyState />
+  if (!report) {
+    return (
+      <div className="flex min-h-0 flex-1 flex-col">
+        <EmptyState />
+      </div>
+    )
+  }
 
   return (
     <div className="flex flex-col gap-4">
