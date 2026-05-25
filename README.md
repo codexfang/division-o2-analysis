@@ -26,4 +26,4 @@ Product teams, accelerators, or founders can use Division O2 as a **offline work
 
 ## License
 
-MIT — use freely for demos and internal tooling.
+MIT
