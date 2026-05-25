@@ -75,9 +75,6 @@ export default function App() {
           </section>
         </div>
       </main>
-      <footer className="border-t border-zinc-900 py-6 text-center text-xs text-zinc-600">
-        Division O2 · Simulated intelligence only · No data leaves your browser
-      </footer>
     </div>
   )
 }
