@@ -24,6 +24,3 @@ The app is a single-page application with no client router. All assets use the `
 
 Product teams, accelerators, or founders can use Division O2 as a **offline workshop tool** to structure idea critique conversations—comparing wedges, saturation, and competitive framing before spending cycles on customer discovery.
 
-## License
-
-MIT
